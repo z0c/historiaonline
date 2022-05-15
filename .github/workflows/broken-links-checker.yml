@@ -3,9 +3,7 @@ name: Broken links checker
 on:
   schedule:
     - cron: 0 0 1 * * # run monthly
-  repository_dispatch: # run manually
-    types: [check-link]
-
+  workflow_dispatch:
 
 jobs:
   check:

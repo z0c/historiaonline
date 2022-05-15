@@ -13,6 +13,6 @@ jobs:
       - uses: technote-space/broken-link-checker-action@v2.2.12
         with:
           TARGET: https://historiaonline.com
-          RECURSIVE: false
+          RECURSIVE: true
           TITLE: Broken link found (${URL})
           GITHUB_TOKEN: ${{github.token}}

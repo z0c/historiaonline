@@ -2,7 +2,7 @@ name: Broken links checker
 
 on:
   schedule:
-    - cron: 0 0 * * 0 # run monthly
+    - cron: 0 0 * * 0 # run weekly
   workflow_dispatch:
 
 permissions:
@@ -12,10 +12,17 @@ jobs:
   check:
     name: Broken links checker
     runs-on: ubuntu-latest
+    
     steps:
-      - uses: technote-space/broken-link-checker-action@v2.2.12
+      - uses: actions/setup-node@v3
         with:
-          TARGET: https://historiaonline.com
-          RECURSIVE: true
-          TITLE: Broken link found (${URL})
-          GITHUB_TOKEN: ${{github.token}}
+          node-version: 14
+
+      - name: Install broken link checker
+        run: npm install broken-link-checker -g
+
+      - name: Check for broken links
+        run: blc https://historiaonline.com -r
+
+      - name: Check for broken links
+        run: blc https://www.historiaonline.com -r

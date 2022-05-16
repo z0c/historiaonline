@@ -14,5 +14,9 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      - name: Home page returns 200
-        run: curl -fs -w "%{http_code}" ${SITE_URL}          
+      - name: Home page curl succeeds
+        run: curl -fs -w "%{http_code}" ${SITE_URL}
+        
+      - name: Home page does not have www links
+        run: |
+          curl -v --silent ${SITE_URL}| grep ${SITE_URL}

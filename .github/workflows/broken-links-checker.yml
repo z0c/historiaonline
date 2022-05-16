@@ -24,6 +24,3 @@ jobs:
 
       - name: Check for broken links
         run: blc https://historiaonline.com -r
-
-      - name: Check for broken links
-        run: blc https://www.historiaonline.com -r

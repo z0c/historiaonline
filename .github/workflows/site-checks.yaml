@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: Home page returns 200
         run: |
-          http_code=$(curl -fs -w "%{http_code}" ${SITE_URL}dfgsdfg)
+          http_code=$(curl -fs -w "%{http_code}" ${SITE_URL})
           if [ $http_code -ne 200 ]; then
             return $http_code
           fi

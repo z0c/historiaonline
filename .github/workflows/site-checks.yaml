@@ -15,4 +15,4 @@ jobs:
     
     steps:
       - name: Home page returns 200
-        run: curl --silent --fail ${SITE_URL}sfdfs
+        run: curl -fail ${SITE_URL}

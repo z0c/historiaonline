@@ -5,15 +5,13 @@ on:
 #    - cron: * * * * *
   workflow_dispatch:
 
-permissions:
-  issues: write
+env:
+  SITE_URL: https://historiaonline.com
   
 jobs:
   check:
     name: Site checks
     runs-on: ubuntu-latest
-    env:
-      SITE_URL: https://historiaonline.com
     
     steps:
       - name: Home page returns 200

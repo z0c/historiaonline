@@ -19,4 +19,4 @@ jobs:
         
       - name: Home page does not have www links
         run: |
-          curl -v --silent ${SITE_URL}| grep ${SITE_URL}
+          curl -v --silent ${SITE_URL}| grep -v ${SITE_URL}

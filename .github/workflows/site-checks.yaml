@@ -1,6 +1,8 @@
 name: Site Checks
 
 on:
+#  schedule:
+#    - cron: * * * * *
   workflow_dispatch:
 
 permissions:

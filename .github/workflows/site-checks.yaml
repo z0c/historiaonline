@@ -1,8 +1,8 @@
 name: Site Checks
 
 on:
-  #schedule:
-  #  - cron: '* * * * *' # Every 5 minuts
+  schedule:
+    - cron: '* * * * *' # Every 5 minuts
   workflow_dispatch:
 
 env:

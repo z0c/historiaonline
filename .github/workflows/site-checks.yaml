@@ -2,7 +2,7 @@ name: Site Checks
 
 on:
   schedule:
-    - cron: '* * * * *' # Every 5 minuts
+    - cron: '*/5 * * * *' # Every 5 minutse
   workflow_dispatch:
 
 env:

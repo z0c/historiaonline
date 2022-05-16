@@ -19,4 +19,4 @@ jobs:
         
       - name: Home page does not have links for domain containing www
         run: |
-          curl -s ${SITE_URL} 2>&1 |grep -F ${SITE_URL} && exit 1
+          curl -s ${SITE_URL} 2>&1 |grep -F https://www.historiaonline.com && exit 1

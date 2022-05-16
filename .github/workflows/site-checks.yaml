@@ -17,6 +17,6 @@ jobs:
       - name: Home page curl succeeds
         run: curl -fs -w "%{http_code}" ${SITE_URL}
         
-      - name: Home page does not have www links
+      - name: Home page does not have links for domain containing www
         run: |
-          curl -v --silent ${SITE_URL}| grep ${SITE_URL} || exit 1
+          curl -s ${SITE_URL} 2>&1 |grep -F ${SITE_URL} && exit 1

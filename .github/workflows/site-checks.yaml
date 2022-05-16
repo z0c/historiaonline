@@ -1,8 +1,8 @@
 name: Site Checks
 
 on:
-#  schedule:
-#    - cron: * * * * *
+  #schedule:
+  #  - cron: '* * * * *' # Every 5 minuts
   workflow_dispatch:
 
 env:
@@ -15,4 +15,8 @@ jobs:
     
     steps:
       - name: Home page returns 200
-        run: curl -fail ${SITE_URL}
+        run: |
+          http_code=$(curl --fail -w "%{http_code}" ${SITE_URL}dfgsdfg)
+          if [ $http_code -ne 200 ]; then
+            return $http_code
+          fi

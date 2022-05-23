@@ -2,7 +2,7 @@ name: Verificador de links quebrados
 
 on:
   schedule:
-    - cron: 0 0 * * 0 # run weekly
+    - cron: 0 8 * * * # Run daily at 8am
   workflow_dispatch:
 
 permissions:

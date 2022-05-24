@@ -18,7 +18,7 @@ jobs:
         uses: jakepartusch/psi-action@v1.2
         id: psi
         with:
-          url: ${SITE_URL}
+          url: ${{ env.SITE_URL }}
   #        threshold: 70
           strategy: mobile
           key: ${{ secrets.PAGESPEEDINSIGHTS_APIKEY }}

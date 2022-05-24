@@ -10,15 +10,23 @@ env:
   
 jobs:
 
-  mobile:
-    name: Mobile
-    runs-on: ubuntu-latest    
+  analyse:
+    name: Analyse
+    runs-on: ubuntu-latest
+    
+    strategy:
+      fail-fast: false
+      matrix:
+        strategy:
+          - desktop
+          - mobile
+          
     steps:
       - name: Running Page Speed Insights
         uses: jakepartusch/psi-action@v1.2
         id: psi
         with:
           url: ${{ env.SITE_URL }}
-  #        threshold: 70
-          strategy: mobile
+          threshold: 50
+          strategy: ${{ matrix.strategy }}
           key: ${{ secrets.PAGESPEEDINSIGHTS_APIKEY }}

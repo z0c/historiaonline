@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 env:
-  SITE_URL: https://historiaonline.com
+  SITE_URL: https://historiaonline.com/
   THRESHOLD: 50
   
 jobs:

@@ -7,7 +7,7 @@ on:
 
 env:
   SITE_URL: https://historiaonline.com/
-  THRESHOLD: 50
+  THRESHOLD: 60
   
 jobs:
 

@@ -21,4 +21,4 @@ jobs:
           url: ${SITE_URL}
   #        threshold: 70
           strategy: mobile
-  #        key: ${{ secrets.APIKEY }}
+          key: ${{ secrets.PAGESPEEDINSIGHTS_APIKEY }}

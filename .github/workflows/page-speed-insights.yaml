@@ -1,0 +1,24 @@
+name: Page Speed Insights
+
+on:
+  schedule:
+    - cron: 0 8 * * * # Run daily at 8am
+  workflow_dispatch:
+
+env:
+  SITE_URL: https://historiaonline.com
+  
+jobs:
+  mobile:
+    name: Mobile
+    runs-on: ubuntu-latest
+    
+  steps:
+    - name: Running Page Speed Insights
+      uses: jakepartusch/psi-action@v1.2
+      id: psi
+      with:
+        url: ${SITE_URL}
+#        threshold: 70
+        strategy: mobile
+#        key: ${{ secrets.APIKEY }}

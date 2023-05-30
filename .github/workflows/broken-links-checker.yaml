@@ -23,4 +23,4 @@ jobs:
         run: npm install broken-link-checker -g
 
       - name: Check for broken links
-        run: blc https://historiaonline.com -r
+        run: blc https://historiaonline.com -ro --exclude 'https://twitter.com'

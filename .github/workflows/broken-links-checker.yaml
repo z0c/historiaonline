@@ -14,6 +14,8 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      - uses: actions/checkout@v4
+      
       - uses: actions/setup-node@v4
         with:
           node-version: 14
@@ -22,5 +24,7 @@ jobs:
       - name: Install broken link checker
         run: npm install broken-link-checker -g
 
+      - uses: gautamkrishnar/keepalive-workflow@v2
+      
       - name: Check for broken links
         run: blc https://historiaonline.com -ro --exclude 'https://twitter.com'
